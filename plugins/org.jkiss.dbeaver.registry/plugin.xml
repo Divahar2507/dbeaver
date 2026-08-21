@@ -36,6 +36,7 @@
         <language code="tw" label="繁體中文"/>
         <language code="uk" label="Українська"/>
         <language code="ar" label="العربية"/>
+        <language code="el" label="Ελληνικά"/>
     </extension>
 
     <extension point="org.jkiss.dbeaver.driverManager">
