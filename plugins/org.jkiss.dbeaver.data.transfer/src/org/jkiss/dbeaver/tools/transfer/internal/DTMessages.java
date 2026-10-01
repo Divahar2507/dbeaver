@@ -193,6 +193,23 @@ public class DTMessages extends NLS {
     public static String pref_data_transfer_replacing_combo_underscores;
     public static String pref_data_transfer_replacing_combo_camel_case;
 
+    public static String stream_transfer_consumer_variable_datasource;
+    public static String stream_transfer_consumer_variable_catalog;
+    public static String stream_transfer_consumer_variable_schema;
+    public static String stream_transfer_consumer_variable_table;
+    public static String stream_transfer_consumer_variable_index;
+    public static String stream_transfer_consumer_variable_project;
+    public static String stream_transfer_consumer_variable_conn_type;
+    public static String stream_transfer_consumer_variable_file;
+    public static String stream_transfer_consumer_variable_script_file;
+    public static String stream_transfer_consumer_variable_timestamp;
+    public static String stream_transfer_consumer_variable_date;
+    public static String stream_transfer_consumer_variable_year;
+    public static String stream_transfer_consumer_variable_month;
+    public static String stream_transfer_consumer_variable_day;
+    public static String stream_transfer_consumer_variable_hour;
+    public static String stream_transfer_consumer_variable_minute;
+
     static {
         // initialize resource bundle
         NLS.initializeMessages(BUNDLE_NAME, DTMessages.class);

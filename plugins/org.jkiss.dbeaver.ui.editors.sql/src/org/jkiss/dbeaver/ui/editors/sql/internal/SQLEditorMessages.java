@@ -344,6 +344,7 @@ public class SQLEditorMessages extends NLS {
     public static String sql_script_binding_type_radio_button_connection_unique;
     public static String sql_script_binding_type_radio_button_connection_url;
 
+    public static String sql_generator_dialog_settings;
     public static String sql_generator_dialog_button_use_fully_names;
     public static String sql_generator_dialog_button_compact_sql;
     public static String sql_generator_dialog_button_exclude_columns;

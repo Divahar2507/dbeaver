@@ -52,7 +52,7 @@ public class SavePreviewDialog extends DetailsViewDialog {
     private final ResultSetSaveReport saveReport;
 
     public SavePreviewDialog(@NotNull ResultSetViewer viewer, boolean showCascadeSettings, @NotNull ResultSetSaveReport saveReport) {
-        super(viewer.getControl().getShell(), "Preview changes", DBIcon.STATUS_WARNING);
+        super(viewer.getControl().getShell(), ResultSetMessages.dialog_save_preview_title, DBIcon.STATUS_WARNING);
 
         this.viewer = viewer;
         this.showCascadeSettings = showCascadeSettings;
@@ -92,9 +92,9 @@ public class SavePreviewDialog extends DetailsViewDialog {
             Label imgLabel = new Label(msgComposite, SWT.NONE);
             imgLabel.setImage(DBeaverIcons.getImage(DBIcon.STATUS_WARNING));
             Label msgText = new Label(msgComposite, SWT.NONE);
-            msgText.setText("You are about to save your changes into the database (" +
-                viewer.getDataSource().getContainer().getName() + ").\n" +
-                (CommonUtils.isEmpty(changesReport) ? "" : "\t" + changesReport + ".") + "\nAre you sure you want to proceed?");
+            msgText.setText(NLS.bind(ResultSetMessages.dialog_save_preview_message,
+                viewer.getDataSource().getContainer().getName(),
+                (CommonUtils.isEmpty(changesReport) ? "" : "\t" + changesReport + ".")));
         }
 
         //UIUtils.createHorizontalLine(messageGroup);
@@ -197,7 +197,7 @@ public class SavePreviewDialog extends DetailsViewDialog {
                 scriptText =
                     SQLUtils.generateCommentLine(
                         viewer.getDataSource(),
-                        "Auto-generated SQL script. Actual values for binary/complex data types may differ - what you see is the default string representation of values.") +
+                        ResultSetMessages.dialog_save_preview_auto_generated_sql) +
                         scriptText;
                 UIServiceSQL serviceSQL = DBWorkbench.getService(UIServiceSQL.class);
                 if (serviceSQL != null) {
@@ -205,7 +205,7 @@ public class SavePreviewDialog extends DetailsViewDialog {
                 }
             }
         } catch (Exception e) {
-            DBWorkbench.getPlatformUI().showError("Can't generate SQL script", "Error generating SQL script from changes", e);
+            DBWorkbench.getPlatformUI().showError(ResultSetMessages.dialog_save_preview_error_title, ResultSetMessages.dialog_save_preview_error_message, e);
         }
     }
 

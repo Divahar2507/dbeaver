@@ -155,7 +155,7 @@ class GenericFilterValueEdit {
         if (isCheckedTable) {
             buttonsPanel = UIUtils.createComposite(composite, 2);
             buttonsPanel.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-            toggleButton = UIUtils.createDialogButton(buttonsPanel, "&Select All", new SelectionAdapter() {
+            toggleButton = UIUtils.createDialogButton(buttonsPanel, ResultSetMessages.dialog_filter_value_edit_select_all, new SelectionAdapter() {
                 @Override
                 public void widgetSelected(SelectionEvent e)
                 {
@@ -202,7 +202,7 @@ class GenericFilterValueEdit {
 
     private void updateToggleButton(Button toggleButton) {
         boolean hasCheckedItems = hasCheckedItems();
-        toggleButton.setText(hasCheckedItems ? "&Clear All" : "&Select All");
+        toggleButton.setText(hasCheckedItems ? ResultSetMessages.dialog_filter_value_edit_clear_all : ResultSetMessages.dialog_filter_value_edit_select_all);
         toggleButton.setData(!hasCheckedItems);
     }
 

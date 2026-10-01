@@ -101,7 +101,7 @@
     <extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
         <specification
                 annotationType="org.jkisss.dbeaver.ui.occurrences.underCursor"
-                label="SQL - word (under cursor) occurrences"
+                label="%annotation.org.jkiss.dbeaver.ui.occurrences.underCursor.label"
                 icon="platform:/plugin/org.jkiss.dbeaver.model/icons/tree/script.svg"
                 textPreferenceKey="occurrenceIndication"
                 textPreferenceValue="false"
@@ -126,7 +126,7 @@
         </specification>
         <specification
                 annotationType="org.jkisss.dbeaver.ui.occurrences.forSelection"
-                label="SQL - selected word occurrences"
+                label="%annotation.org.jkiss.dbeaver.ui.occurrences.forSelection.label"
                 icon="platform:/plugin/org.jkiss.dbeaver.model/icons/tree/script.svg"
                 textPreferenceKey="writeOccurrenceIndication"
                 textPreferenceValue="false"

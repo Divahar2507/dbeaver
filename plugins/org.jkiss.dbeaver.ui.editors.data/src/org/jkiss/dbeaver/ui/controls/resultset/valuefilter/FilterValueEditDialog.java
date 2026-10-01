@@ -52,7 +52,7 @@ public class FilterValueEditDialog extends BaseDialog{
     private static final Log log = Log.getLog(FilterValueEditDialog.class);
 
     public FilterValueEditDialog(ResultSetViewer viewer, DBDAttributeBinding attr, ResultSetRow[] rows, DBCLogicalOperator operator) {
-		super(viewer.getControl().getShell(), "Edit value", null);
+		super(viewer.getControl().getShell(), ResultSetMessages.dialog_filter_value_edit_title, null);
 		handler = new GenericFilterValueEdit(viewer, attr, rows, operator);
 	}
 
@@ -176,7 +176,7 @@ public class FilterValueEditDialog extends BaseDialog{
     protected void createButtonsForButtonBar(Composite parent)
     {
         if (handler.getOperator().getArgumentCount() == 1) {
-            Button copyButton = createButton(parent, IDialogConstants.DETAILS_ID, "Clipboard", false);
+            Button copyButton = createButton(parent, IDialogConstants.DETAILS_ID, ResultSetMessages.dialog_filter_value_edit_clipboard, false);
             copyButton.setImage(DBeaverIcons.getImage(UIIcon.FILTER_CLIPBOARD));
         }
 
@@ -191,7 +191,7 @@ public class FilterValueEditDialog extends BaseDialog{
                 Object value = ResultSetUtils.getAttributeValueFromClipboard(handler.getAttribute());
                 handler.getEditor().primeEditorValue(value);
             } catch (DBException e) {
-                DBWorkbench.getPlatformUI().showError("Copy from clipboard", "Can't copy value", e);
+                DBWorkbench.getPlatformUI().showError(ResultSetMessages.dialog_filter_value_edit_copy_from_clipboard, ResultSetMessages.dialog_filter_value_edit_cant_copy_value, e);
             }
         } else {
             super.buttonPressed(buttonId);

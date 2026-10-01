@@ -39,6 +39,7 @@ import org.jkiss.dbeaver.model.runtime.DBRRunnableWithProgress;
 import org.jkiss.dbeaver.model.runtime.DefaultProgressMonitor;
 import org.jkiss.dbeaver.runtime.DBWorkbench;
 import org.jkiss.dbeaver.ui.IRefreshablePart;
+import org.jkiss.dbeaver.ui.editors.data.internal.DataEditorsMessages;
 import org.jkiss.dbeaver.ui.UIUtils;
 import org.jkiss.dbeaver.ui.controls.ColumnInfoPanel;
 import org.jkiss.dbeaver.ui.data.IStreamValueManager;
@@ -527,7 +528,7 @@ public class ContentEditor extends MultiPageAbstractEditor implements IValueEdit
             //valueController.getValueSite().getWorkbenchWindow().run(true, true, initializer);
             UIUtils.runInProgressService(initializer);
         } catch (InvocationTargetException e) {
-            DBWorkbench.getPlatformUI().showError("Cannot refresh content editor", null, e);
+            DBWorkbench.getPlatformUI().showError(DataEditorsMessages.content_editor_error_cannot_refresh_content_editor, null, e);
         } catch (InterruptedException e) {
             // ignore
         }

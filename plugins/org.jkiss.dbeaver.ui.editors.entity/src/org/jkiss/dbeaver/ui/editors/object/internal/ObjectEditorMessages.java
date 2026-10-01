@@ -88,6 +88,9 @@ public class ObjectEditorMessages extends NLS {
     public static String selector_select_all_text;
     public static String selector_clear_all_text;
 
+    public static String edit_foreign_key_page_title_define_unique_key;
+    public static String edit_foreign_key_page_title_define_virtual_foreign_keys;
+
     static {
         // initialize resource bundle
         NLS.initializeMessages(BUNDLE_NAME, ObjectEditorMessages.class);

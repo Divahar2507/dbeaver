@@ -153,6 +153,8 @@ public class DataEditorsMessages extends NLS {
     public static String notification_org_jkiss_dbeaver_ui_actions_common_uuid_copy_text;
 
 
+    public static String content_editor_error_cannot_refresh_content_editor;
+
     static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, DataEditorsMessages.class);

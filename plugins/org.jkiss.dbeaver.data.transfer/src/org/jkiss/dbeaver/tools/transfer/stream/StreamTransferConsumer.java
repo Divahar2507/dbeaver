@@ -104,21 +104,21 @@ public class StreamTransferConsumer implements IDataTransferConsumer<StreamConsu
     public static final String VARIABLE_MINUTE = "minute";
 
     public static final String[][] VARIABLES = {
-        {VARIABLE_DATASOURCE, "source database datasource"},
-        {VARIABLE_CATALOG, "source database catalog"},
-        {VARIABLE_SCHEMA, "source database schema"},
-        {VARIABLE_TABLE, "source database table"},
-        {VARIABLE_INDEX, "index of current file (if split is used)"},
-        {VARIABLE_PROJECT, "source database project"},
-        {VARIABLE_CONN_TYPE, "source database connection type"},
-        {VARIABLE_SCRIPT_FILE, "source script filename"},
-        {VARIABLE_TIMESTAMP, "current timestamp"},
-        {VARIABLE_DATE, "current date"},
-        {VARIABLE_YEAR, "current year"},
-        {VARIABLE_MONTH, "current month"},
-        {VARIABLE_DAY, "current day"},
-        {VARIABLE_HOUR, "current hour"},
-        {VARIABLE_MINUTE, "current minute"},
+        {VARIABLE_DATASOURCE, DTMessages.stream_transfer_consumer_variable_datasource},
+        {VARIABLE_CATALOG, DTMessages.stream_transfer_consumer_variable_catalog},
+        {VARIABLE_SCHEMA, DTMessages.stream_transfer_consumer_variable_schema},
+        {VARIABLE_TABLE, DTMessages.stream_transfer_consumer_variable_table},
+        {VARIABLE_INDEX, DTMessages.stream_transfer_consumer_variable_index},
+        {VARIABLE_PROJECT, DTMessages.stream_transfer_consumer_variable_project},
+        {VARIABLE_CONN_TYPE, DTMessages.stream_transfer_consumer_variable_conn_type},
+        {VARIABLE_SCRIPT_FILE, DTMessages.stream_transfer_consumer_variable_script_file},
+        {VARIABLE_TIMESTAMP, DTMessages.stream_transfer_consumer_variable_timestamp},
+        {VARIABLE_DATE, DTMessages.stream_transfer_consumer_variable_date},
+        {VARIABLE_YEAR, DTMessages.stream_transfer_consumer_variable_year},
+        {VARIABLE_MONTH, DTMessages.stream_transfer_consumer_variable_month},
+        {VARIABLE_DAY, DTMessages.stream_transfer_consumer_variable_day},
+        {VARIABLE_HOUR, DTMessages.stream_transfer_consumer_variable_hour},
+        {VARIABLE_MINUTE, DTMessages.stream_transfer_consumer_variable_minute},
     };
 
     public static final int OUT_FILE_BUFFER_SIZE = 100000;

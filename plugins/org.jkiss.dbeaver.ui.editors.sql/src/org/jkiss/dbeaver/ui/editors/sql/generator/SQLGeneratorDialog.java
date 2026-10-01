@@ -195,7 +195,7 @@ class SQLGeneratorDialog extends ViewSQLDialog {
             return composite;
         }
         
-        Composite settings = UIUtils.createTitledComposite(composite, "Settings", 5, GridData.FILL_HORIZONTAL, SWT.DEFAULT);
+        Composite settings = UIUtils.createTitledComposite(composite, SQLEditorMessages.sql_generator_dialog_settings, 5, GridData.FILL_HORIZONTAL, SWT.DEFAULT);
         settings.setLayout(new RowLayout());
         Button useFQNames = UIUtils.createCheckbox(settings, SQLEditorMessages.sql_generator_dialog_button_use_fully_names, sqlGenerator.isFullyQualifiedNames());
         useFQNames.addSelectionListener(new SelectionAdapter() {

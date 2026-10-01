@@ -217,6 +217,19 @@ public class ResultSetMessages extends NLS {
 
     public static String dialog_value_view_job_selector_name;
 
+    public static String dialog_filter_value_edit_clear_all;
+    public static String dialog_filter_value_edit_select_all;
+    public static String dialog_value_view_dialog_title;
+    public static String dialog_value_view_dialog_column_info_hide;
+    public static String dialog_value_view_dialog_column_info_show;
+    public static String dialog_text_view_text;
+    public static String dialog_text_view_hex;
+    public static String dialog_text_view_length;
+    public static String dialog_save_preview_title;
+    public static String dialog_save_preview_message;
+    public static String dialog_save_preview_auto_generated_sql;
+    public static String dialog_save_preview_error_title;
+    public static String dialog_save_preview_error_message;
     public static String dialog_filter_value_edit_title;
     public static String dialog_filter_value_edit_label_choose_values;
     public static String dialog_filter_value_edit_label_define_description;
