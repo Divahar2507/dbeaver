@@ -1,6 +1,6 @@
 /*
  * DBeaver - Universal Database Manager
- * Copyright (C) 2010-2024 DBeaver Corp and others
+ * Copyright (C) 2010-2026 DBeaver Corp and others
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
  */
 package org.jkiss.dbeaver.ui.controls.resultset.actions;
 
+import org.eclipse.osgi.util.NLS;
 import org.jkiss.dbeaver.model.data.DBDAttributeBinding;
 import org.jkiss.dbeaver.model.data.DBDAttributeConstraint;
 import org.jkiss.dbeaver.model.data.DBDDataFilter;
@@ -23,6 +24,7 @@ import org.jkiss.dbeaver.ui.DBeaverIcons;
 import org.jkiss.dbeaver.ui.UIIcon;
 import org.jkiss.dbeaver.ui.controls.resultset.IResultSetController;
 import org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer;
+import org.jkiss.dbeaver.ui.controls.resultset.internal.ResultSetMessages;
 
 public class OrderByAttributeAction extends AbstractResultSetViewerAction {
     private final DBDAttributeBinding attribute;
@@ -32,8 +34,9 @@ public class OrderByAttributeAction extends AbstractResultSetViewerAction {
         super(
             resultSetViewer,
             order == IResultSetController.ColumnOrder.NONE ?
-                "Disable order by " + attribute.getName() :
-                "Order by " + attribute.getName() + " " + order.name(), AS_CHECK_BOX);
+                NLS.bind(ResultSetMessages.actions_name_order_by_disable, attribute.getName()) :
+                NLS.bind(ResultSetMessages.actions_name_order_by, attribute.getName(), order.name()),
+            AS_CHECK_BOX);
         this.attribute = attribute;
         this.order = order;
         if (order != IResultSetController.ColumnOrder.NONE) {

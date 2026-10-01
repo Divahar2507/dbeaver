@@ -238,7 +238,7 @@ public class EditMavenArtifactDialog extends BaseDialog {
             preferredVersionText.setEditable(false);
             fallbackVersionText.setEnabled(false);
             isReadOnly = true;
-            UIUtils.createInfoLabel(container, "Predefined Maven artifacts are read-only", GridData.FILL_HORIZONTAL, 2);
+            UIUtils.createInfoLabel(container, UIConnectionMessages.dialog_edit_driver_edit_maven_predefined_artifacts_read_only, GridData.FILL_HORIZONTAL, 2);
         }
 
         CTabItem item = new CTabItem(folder, SWT.NONE);

@@ -914,13 +914,13 @@ public class SQLQueryJob extends DataSourceJob {
 
                 if (statistics.getStatementsCount() > 1) {
                     // Multiple statements - show script statistics
-                    fakeResultSet.addColumn("Queries", DBPDataKind.NUMERIC);
-                    fakeResultSet.addColumn("Updated Rows", DBPDataKind.NUMERIC);
-                    fakeResultSet.addColumn("Execute time", DBPDataKind.NUMERIC);
-                    fakeResultSet.addColumn("Fetch time", DBPDataKind.NUMERIC);
-                    fakeResultSet.addColumn("Total time", DBPDataKind.NUMERIC);
-                    fakeResultSet.addColumn("Start time", DBPDataKind.DATETIME);
-                    fakeResultSet.addColumn("Finish time", DBPDataKind.DATETIME);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_queries, DBPDataKind.NUMERIC);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_updated_rows, DBPDataKind.NUMERIC);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_execute_time, DBPDataKind.NUMERIC);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_fetch_time, DBPDataKind.NUMERIC);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_total_time, DBPDataKind.NUMERIC);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_start_time, DBPDataKind.DATETIME);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_finish_time, DBPDataKind.DATETIME);
                     fakeResultSet.addRow(
                         statistics.getStatementsCount(),
                         statistics.getRowsUpdated() < 0 ? 0 : statistics.getRowsUpdated(),
@@ -935,11 +935,11 @@ public class SQLQueryJob extends DataSourceJob {
                     // Single statement - reorder fields to prioritize the important ones
                     // Important fields like "Updated Rows" and "Execute time" are now displayed before the query text for easier access.
                     long updateCount = statistics.getRowsUpdated();
-                    fakeResultSet.addColumn("Updated Rows", DBPDataKind.NUMERIC);
-                    fakeResultSet.addColumn("Execute time", DBPDataKind.NUMERIC);
-                    fakeResultSet.addColumn("Start time", DBPDataKind.DATETIME);
-                    fakeResultSet.addColumn("Finish time", DBPDataKind.DATETIME);
-                    fakeResultSet.addColumn("Query", DBPDataKind.STRING);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_updated_rows, DBPDataKind.NUMERIC);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_execute_time, DBPDataKind.NUMERIC);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_start_time, DBPDataKind.DATETIME);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_finish_time, DBPDataKind.DATETIME);
+                    fakeResultSet.addColumn(SQLEditorMessages.sql_editor_stat_column_query, DBPDataKind.STRING);
                     fakeResultSet.addRow(
                         updateCount,
                         RuntimeUtils.formatExecutionTime(statistics.getExecuteTime()),

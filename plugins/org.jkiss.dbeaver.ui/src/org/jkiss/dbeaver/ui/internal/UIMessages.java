@@ -136,6 +136,15 @@ public class UIMessages extends NLS {
     public static String holiday_decorations_disabled_message;
     public static String holiday_decorations_disabled_title;
 
+    public static String dialog_auto_refresh_title;
+    public static String dialog_auto_refresh_interval_label;
+    public static String dialog_auto_refresh_interval_tip;
+    public static String dialog_auto_refresh_stop_on_error;
+    public static String dialog_auto_refresh_stop_on_error_tip;
+
+    public static String dialog_connection_lost_title;
+    public static String dialog_connection_lost_message;
+
     static {
         // initialize resource bundle
         NLS.initializeMessages(BUNDLE_NAME, UIMessages.class);

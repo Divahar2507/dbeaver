@@ -1,6 +1,6 @@
 /*
  * DBeaver - Universal Database Manager
- * Copyright (C) 2010-2024 DBeaver Corp and others
+ * Copyright (C) 2010-2026 DBeaver Corp and others
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,12 @@ import org.jkiss.dbeaver.model.DBPDataSource;
 import org.jkiss.dbeaver.model.preferences.DBPPreferenceStore;
 import org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer;
 import org.jkiss.dbeaver.ui.controls.resultset.internal.ResultSetMessages;
+import org.jkiss.dbeaver.ui.editors.data.internal.DataEditorsMessages;
 
 public class TransformComplexTypesToggleAction extends AbstractResultSetViewerAction {
     public TransformComplexTypesToggleAction(ResultSetViewer resultSetViewer) {
         super(resultSetViewer, ResultSetMessages.actions_name_structurize_complex_types, AS_CHECK_BOX);
-        setToolTipText("Visualize complex types (arrays, structures, maps) in results grid as separate columns");
+        setToolTipText(DataEditorsMessages.pref_page_database_resultsets_label_structurize_complex_types_tip);
     }
 
     @Override

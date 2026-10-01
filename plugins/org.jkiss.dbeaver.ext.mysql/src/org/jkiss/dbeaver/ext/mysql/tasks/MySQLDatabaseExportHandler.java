@@ -1,6 +1,6 @@
 /*
  * DBeaver - Universal Database Manager
- * Copyright (C) 2010-2025 DBeaver Corp and others
+ * Copyright (C) 2010-2026 DBeaver Corp and others
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,12 @@
  */
 package org.jkiss.dbeaver.ext.mysql.tasks;
 
+import org.eclipse.osgi.util.NLS;
 import org.jkiss.code.NotNull;
 import org.jkiss.dbeaver.DBException;
 import org.jkiss.dbeaver.Log;
 import org.jkiss.dbeaver.ext.mysql.MySQLConstants;
+import org.jkiss.dbeaver.ext.mysql.MySQLMessages;
 import org.jkiss.dbeaver.ext.mysql.MySQLUtils;
 import org.jkiss.dbeaver.ext.mysql.model.MySQLTableBase;
 import org.jkiss.dbeaver.model.fs.DBFUtils;
@@ -183,7 +185,7 @@ public class MySQLDatabaseExportHandler extends MySQLNativeToolHandler<MySQLExpo
         boolean isFiltering = settings.isRemoveDefiner();
         Thread job = isFiltering ?
             new DumpFilterJob(monitor, process.getInputStream(), outFile, log) :
-            new DumpCopierJob(monitor, "Dump database", process.getInputStream(), outFile, log);
+            new DumpCopierJob(monitor, MySQLMessages.task_export_dump_database, process.getInputStream(), outFile, log);
         job.start();
     }
 
@@ -192,12 +194,12 @@ public class MySQLDatabaseExportHandler extends MySQLNativeToolHandler<MySQLExpo
         private final Pattern DEFINER_PATTER = Pattern.compile("DEFINER\\s*=\\s*`.*?`@`.*?`", Pattern.CASE_INSENSITIVE);
 
         DumpFilterJob(DBRProgressMonitor monitor, InputStream stream, Path outFile, Log log) {
-            super("MySQL database dump filter", monitor, stream, outFile, log);
+            super(MySQLMessages.task_export_database_dump_filter, monitor, stream, outFile, log);
         }
 
         @Override
         public void runDump() throws IOException {
-            monitor.beginTask("Export database", 100);
+            monitor.beginTask(MySQLMessages.task_export_database, 100);
             long prevStatusUpdateTime = 0;
             try {
                 NumberFormat numberFormat = NumberFormat.getInstance();
@@ -216,7 +218,7 @@ public class MySQLDatabaseExportHandler extends MySQLNativeToolHandler<MySQLExpo
                         }
                         long currentTime = System.currentTimeMillis();
                         if (currentTime - prevStatusUpdateTime > 300) {
-                            monitor.subTask("Saved " + numberFormat.format(reader.getLineNumber()) + " lines");
+                            monitor.subTask(NLS.bind(MySQLMessages.task_export_database_saved_lines, numberFormat.format(reader.getLineNumber())));
                             prevStatusUpdateTime = currentTime;
                         }
                         line = filterLine(line);

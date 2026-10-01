@@ -48,6 +48,7 @@ import org.jkiss.dbeaver.ui.BaseThemeSettings;
 import org.jkiss.dbeaver.ui.DBeaverIcons;
 import org.jkiss.dbeaver.ui.UIStyles;
 import org.jkiss.dbeaver.ui.UIUtils;
+import org.jkiss.dbeaver.ui.internal.UINavigatorMessages;
 import org.jkiss.dbeaver.ui.internal.registry.NavigatorExtensionsRegistry;
 import org.jkiss.dbeaver.ui.navigator.INavigatorModelView;
 import org.jkiss.dbeaver.ui.navigator.INavigatorNodeActionHandler;
@@ -354,7 +355,7 @@ public class StatisticsNavigatorNodeRenderer extends DefaultNavigatorNodeRendere
                         } catch (Exception e) {
                             formattedSize = String.valueOf(statObjectSize);
                         }
-                        return NLS.bind("Object size on disk: {0} bytes", formattedSize);
+                        return NLS.bind(UINavigatorMessages.navigator_node_renderer_tooltip_object_size, formattedSize);
                     }
                 }
             }

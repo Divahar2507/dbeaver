@@ -22,6 +22,10 @@ public class MySQLMessages extends NLS {
     private static final String BUNDLE_NAME = "org.jkiss.dbeaver.ext.mysql.MySQLMessages";
 
     public static String exception_direct_database_rename;
+    public static String task_export_database;
+    public static String task_export_dump_database;
+    public static String task_export_database_dump_filter;
+    public static String task_export_database_saved_lines;
 
     static {
         NLS.initializeMessages(BUNDLE_NAME, MySQLMessages.class);

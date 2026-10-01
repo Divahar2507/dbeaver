@@ -301,6 +301,7 @@ public class UIConnectionMessages extends NLS {
     public static String dialog_edit_driver_edit_maven_load_optional_dependencies;
     public static String dialog_edit_driver_edit_maven_ignore_transient_dependencies;
     public static String dialog_edit_driver_edit_maven_load_optional_dependencies_tip;
+    public static String dialog_edit_driver_edit_maven_predefined_artifacts_read_only;
 
     public static String dialog_driver_category_all_label;
     public static String dialog_driver_category_all_tip;

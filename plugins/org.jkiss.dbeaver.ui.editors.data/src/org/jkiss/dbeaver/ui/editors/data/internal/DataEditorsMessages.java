@@ -51,6 +51,7 @@ public class DataEditorsMessages extends NLS {
     public static String pref_page_database_resultsets_label_mark_odd_rows;
     public static String pref_page_database_resultsets_label_highlight_rows_with_selected_cells;
     public static String pref_page_database_resultsets_label_colorize_data_types;
+    public static String pref_page_database_resultsets_label_colorize_data_types_tip;
     public static String pref_page_database_resultsets_label_row_batch_size;
     public static String pref_page_database_resultsets_label_row_batch_size_tip;
     public static String pref_page_database_resultsets_label_show_cell_icons;
@@ -145,6 +146,8 @@ public class DataEditorsMessages extends NLS {
     public static String spreadsheet_accessibility_freeform_range_selected;
     public static String spreadsheet_accessibility_description;
 
+
+    public static String content_editor_error_cannot_refresh_content_editor;
 
     static {
 		// initialize resource bundle

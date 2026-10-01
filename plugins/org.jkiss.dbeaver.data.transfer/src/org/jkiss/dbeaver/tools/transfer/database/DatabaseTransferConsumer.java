@@ -910,7 +910,7 @@ public class DatabaseTransferConsumer implements IDataTransferConsumer<DatabaseC
         }
 
         if (targetName != null) {
-            return targetName + " [Existing]";
+            return targetName + " " + DTMessages.database_transfer_consumer_mapping_existing;
         }
 
         if (containerMapping == null) {
@@ -921,18 +921,18 @@ public class DatabaseTransferConsumer implements IDataTransferConsumer<DatabaseC
 
         // + " [No changes]";
         return switch (containerMapping.getMappingType()) {
-            case create -> targetName + " [Create]";
-            case recreate -> targetName + " [Recreate]";
+            case create -> targetName + " " + DTMessages.database_transfer_consumer_mapping_create;
+            case recreate -> targetName + " " + DTMessages.database_transfer_consumer_mapping_recreate;
             case existing -> {
                 for (DatabaseMappingAttribute attr : containerMapping.getAttributeMappings(new VoidProgressMonitor())) {
                     if (attr.getMappingType() == DatabaseMappingType.create) {
-                        yield targetName + " [Alter]";
+                        yield targetName + " " + DTMessages.database_transfer_consumer_mapping_alter;
                     }
                 }
                 yield targetName;
             }
-            case skip -> "[Skip]";
-            default -> targetName + " [Existing]";
+            case skip -> DTMessages.database_transfer_consumer_mapping_skip;
+            default -> targetName + " " + DTMessages.database_transfer_consumer_mapping_existing;
         };
     }
 

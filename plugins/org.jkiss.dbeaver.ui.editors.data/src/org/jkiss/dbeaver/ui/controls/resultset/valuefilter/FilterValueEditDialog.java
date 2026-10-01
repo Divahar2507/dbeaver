@@ -235,7 +235,11 @@ public class FilterValueEditDialog extends BaseDialog{
             handler.getEditor().primeEditorValue(clipboardValue);
             handler.getEditor().getControl().setFocus();
         } catch (DBException e) {
-            DBWorkbench.getPlatformUI().showError("Copy from clipboard", "Can't copy value", e);
+            DBWorkbench.getPlatformUI().showError(
+                ResultSetMessages.dialog_filter_value_edit_copy_from_clipboard,
+                ResultSetMessages.dialog_filter_value_edit_cant_copy_value,
+                e
+            );
         }
     }
 

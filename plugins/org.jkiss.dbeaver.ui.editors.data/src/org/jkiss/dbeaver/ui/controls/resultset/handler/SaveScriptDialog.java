@@ -203,8 +203,8 @@ class SaveScriptDialog extends BaseDialog {
             }
         } catch (Exception e) {
             DBWorkbench.getPlatformUI().showError(
-                "Can't generate SQL script",
-                "Error generating SQL script from data changes",
+                ResultSetMessages.dialog_save_script_error_title,
+                ResultSetMessages.dialog_save_script_error_message,
                 e
             );
         }

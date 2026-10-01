@@ -18,11 +18,13 @@ package org.jkiss.dbeaver.ui.dialogs;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.dialogs.IDialogConstants;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.jkiss.code.NotNull;
 import org.jkiss.code.Nullable;
 import org.jkiss.dbeaver.model.DBPDataSourceContainer;
+import org.jkiss.dbeaver.ui.internal.UIMessages;
 import org.jkiss.dbeaver.utils.GeneralUtils;
 
 /**
@@ -40,8 +42,8 @@ public class ConnectionLostDialog extends StandardErrorDialog {
     ) {
         super(
             parentShell,
-            "Connection lost",
-            "Connection to '" + container.getName() + "' was lost and cannot be re-established.\nWhat do you want to do?",
+            UIMessages.dialog_connection_lost_title,
+            NLS.bind(UIMessages.dialog_connection_lost_message, container.getName()),
             GeneralUtils.makeExceptionStatus(error),
             IStatus.INFO | IStatus.WARNING | IStatus.ERROR);
         this.stopButtonName = stopButtonName;

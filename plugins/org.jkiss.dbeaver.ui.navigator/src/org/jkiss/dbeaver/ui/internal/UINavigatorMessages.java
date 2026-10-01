@@ -305,6 +305,7 @@ public class UINavigatorMessages extends NLS {
     public static String CreateLinkedFileRunnable_e_unable_to_link;
     public static String CreateLinkedFolderRunnable_e_cancelled_link;
     public static String CreateLinkedFolderRunnable_e_unable_to_link;
+    public static String navigator_node_renderer_tooltip_object_size;
 
     static {
         // initialize resource bundle

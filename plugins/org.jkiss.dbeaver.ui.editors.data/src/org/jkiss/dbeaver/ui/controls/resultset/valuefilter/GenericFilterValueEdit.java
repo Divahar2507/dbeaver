@@ -195,7 +195,7 @@ class GenericFilterValueEdit {
 
     private void updateToggleButton(Button toggleButton) {
         boolean hasCheckedItems = hasCheckedItems();
-        toggleButton.setText(hasCheckedItems ? "&Clear All" : WorkbenchMessages.Workbench_selectAll);
+        toggleButton.setText(hasCheckedItems ? ResultSetMessages.dialog_filter_value_edit_clear_all : WorkbenchMessages.Workbench_selectAll);
         toggleButton.setData(!hasCheckedItems);
     }
 

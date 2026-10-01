@@ -60,6 +60,9 @@ public class TaskUIMessages extends NLS {
     public static String task_config_wizard_stub_page_name_void;
 
     public static String task_processor_ui_message_task_completed;
+    public static String task_processor_ui_message_objects_processed;
+    public static String task_processor_ui_error_task_title;
+    public static String task_processor_ui_error_task_failed;
 
     public static String task_configuration_wizard_page_task_error_message_enter_task_name;
     public static String task_configuration_wizard_page_task_already_exists;

@@ -82,7 +82,7 @@ public class DateTimeStandaloneEditor extends ValueViewDialog {
         }
         primeEditorValue(value);
 
-        Button button = UIUtils.createPushButton(panel, "Set Current", null);
+        Button button = UIUtils.createPushButton(panel, ResultSetMessages.editor_date_time_set_current, null);
 
         button.setEnabled(!valueController.isReadOnly());
         button.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> primeEditorValue(new Date())));

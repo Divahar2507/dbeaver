@@ -27,6 +27,7 @@ import org.jkiss.code.NotNull;
 import org.jkiss.dbeaver.ui.UIIcon;
 import org.jkiss.dbeaver.ui.UIUtils;
 import org.jkiss.dbeaver.ui.dialogs.BaseDialog;
+import org.jkiss.dbeaver.ui.internal.UIMessages;
 
 public class AutoRefreshConfigDialog extends BaseDialog {
 
@@ -35,7 +36,7 @@ public class AutoRefreshConfigDialog extends BaseDialog {
     private RefreshSettings refreshSettings;
 
     AutoRefreshConfigDialog(Shell parentShell, RefreshSettings settings) {
-        super(parentShell, "Auto-refresh configuration", UIIcon.CLOCK_START);
+        super(parentShell, UIMessages.dialog_auto_refresh_title, UIIcon.CLOCK_START);
         this.refreshSettings = new RefreshSettings(settings);
     }
 
@@ -54,11 +55,11 @@ public class AutoRefreshConfigDialog extends BaseDialog {
     protected Composite createDialogArea(@NotNull Composite parent) {
         Composite composite = super.createDialogArea(parent);
 
-        Composite settingsGroup = UIUtils.createTitledComposite(composite, "Settings", 2, GridData.FILL_BOTH);
+        Composite settingsGroup = UIUtils.createTitledComposite(composite, UIMessages.dialogs_name_and_password_dialog_group_settings, 2, GridData.FILL_BOTH);
         final Spinner intervalSpinner = UIUtils.createLabelSpinner(
             settingsGroup,
-            "Interval (sec)",
-            "Auto-refresh interval in seconds",
+            UIMessages.dialog_auto_refresh_interval_label,
+            UIMessages.dialog_auto_refresh_interval_tip,
             refreshSettings.getRefreshInterval(),
             1,
             Integer.MAX_VALUE
@@ -67,8 +68,8 @@ public class AutoRefreshConfigDialog extends BaseDialog {
             refreshSettings.setRefreshInterval(intervalSpinner.getSelection())));
         final Button stopOnErrorCheck = UIUtils.createCheckbox(
             settingsGroup,
-            "Stop on error",
-            "Stop auto-refresh if error happens",
+            UIMessages.dialog_auto_refresh_stop_on_error,
+            UIMessages.dialog_auto_refresh_stop_on_error_tip,
             refreshSettings.isStopOnError(),
             2
         );
